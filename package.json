@@ -1,0 +1,24 @@
+{
+  "name": "loghub-ts-sdk",
+  "version": "1.0.0",
+  "description": "LogHub TypeScript SDK",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/DRadman/loghub-ts-sdk.git"
+  },
+  "keywords": [
+    "LogHub",
+    "TypeScript",
+    "SDK"
+  ],
+  "author": "DRadman",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/DRadman/loghub-ts-sdk/issues"
+  },
+  "homepage": "https://github.com/DRadman/loghub-ts-sdk#readme"
+}
