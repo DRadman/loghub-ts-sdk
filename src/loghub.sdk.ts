@@ -82,8 +82,6 @@ export class LogHub {
     options: {
       apiKey: string;
       apiHost: string;
-      environment: string;
-      version: string;
     },
     extra?: {
       enableScreenCapture?: boolean;
