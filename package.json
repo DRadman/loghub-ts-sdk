@@ -1,6 +1,6 @@
 {
   "name": "@dradman/loghub-ts-sdk",
-  "version": "1.0.0",
+  "version": "0.1.6",
   "description": "LogHub TypeScript SDK",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
