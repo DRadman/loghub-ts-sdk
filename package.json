@@ -29,12 +29,7 @@
   "homepage": "https://github.com/DRadman/loghub-ts-sdk#readme",
   "dependencies": {
     "axios": "^1.6.7",
-    "fast-speedtest-api": "^0.3.2",
-    "http": "^0.0.1-security",
-    "https": "^1.0.0",
-    "https-browserify": "^1.0.0",
-    "os": "^0.1.2",
-    "stream-http": "^3.2.0"
+    "os": "^0.1.2"
   },
   "devDependencies": {
     "@types/node": "^20.11.25"
