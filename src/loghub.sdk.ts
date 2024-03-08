@@ -34,16 +34,6 @@ export class LogHub {
     this.version = version;
   }
 
-  private async setupSession() {
-    if (typeof window !== 'undefined') {
-        // Browser environment
-        document.addEventListener('DOMContentLoaded', this.handleSession);
-      } else if (typeof process !== 'undefined') {
-        // Node.js environment
-        await this.handleSession();
-      }
-  }
-
   private async handleSession() {
     if (!this.session) {
       // Start session if it hasn't been started yet
@@ -155,7 +145,7 @@ export class LogHub {
     const deviceResult = await registerDevice(apiHost, apiKey, apiHeader, dto);
     if (deviceResult.status == 200 || deviceResult.status == 201) {
       LogHub.instance.device = deviceResult.data;
-      LogHub.instance.setupSession();
+      await LogHub.instance.handleSession();
     } else {
       throw new LogHubError('Failed to register new Deivce');
     }
