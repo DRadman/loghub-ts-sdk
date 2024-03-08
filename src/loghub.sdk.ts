@@ -139,7 +139,7 @@ export class LogHub {
     apiHeader: string,
   ) {
     const {environment, project, version} = LogHub.instance;
-    const releaseId = project.releases.find((value) => value.version == version)?.version
+    const releaseId = project.releases.find((value) => value.version == version)?.releaseId
     const dto: RegisterDevice = {
       uniqueIdentifier: generateDeviceIdentifier(),
       os: getOperatingSystemName(),
