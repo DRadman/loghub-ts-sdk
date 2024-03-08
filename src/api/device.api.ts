@@ -10,7 +10,7 @@ export function registerDevice(
   const headers = new AxiosHeaders();
   headers.set('Content-Type', 'application/json');
   headers.set(apiHeader, apiKey);
-  return axios.post<Device>(apiHost + '/api/v1/device/register', {
+  return axios.post<Device>(apiHost + '/api/v1/device/register', dto, {
     headers: headers,
   });
 }
@@ -41,26 +41,26 @@ export function startApiSession(
 }
 
 export function updateApiSession(
-    apiHost: string,
-    apiKey: string,
-    apiHeader: string,
-    sessionId: string,
-    dto: {
-      startTime: Date;
-      networkType: string;
-      networkSpeed: string;
-      crashFree?: boolean;
-      endTime?: Date;
+  apiHost: string,
+  apiKey: string,
+  apiHeader: string,
+  sessionId: string,
+  dto: {
+    startTime: Date;
+    networkType: string;
+    networkSpeed: string;
+    crashFree?: boolean;
+    endTime?: Date;
+  },
+): Promise<AxiosResponse<Session>> {
+  const headers = new AxiosHeaders();
+  headers.set('Content-Type', 'application/json');
+  headers.set(apiHeader, apiKey);
+  return axios.post<Session>(
+    apiHost + '/api/v1/device/update-session/' + sessionId,
+    dto,
+    {
+      headers: headers,
     },
-  ): Promise<AxiosResponse<Session>> {
-    const headers = new AxiosHeaders();
-    headers.set('Content-Type', 'application/json');
-    headers.set(apiHeader, apiKey);
-    return axios.post<Session>(
-      apiHost + '/api/v1/device/update-session/' + sessionId,
-      dto,
-      {
-        headers: headers,
-      },
-    );
-  }
+  );
+}
