@@ -10,7 +10,7 @@ export function registerDevice(
   const headers = new AxiosHeaders();
   headers.set('Content-Type', 'application/json');
   headers.set(apiHeader, apiKey);
-  return axios.get<Device>(apiHost + '/api/v1/device/register', {
+  return axios.post<Device>(apiHost + '/api/v1/device/register', {
     headers: headers,
   });
 }
